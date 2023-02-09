@@ -316,12 +316,12 @@ static void calcBounds(struct NSVGimage* image)
   for (shape = image->shapes; shape != NULL; shape = shape->next) {
     for (path = shape->paths; path != NULL; path = path->next) {
       for (i = 0; i < path->npts-1; i++) {
-	float* p = &path->pts[i*2];
-	bounds[0] = minf(bounds[0], p[0]);
-	bounds[1] = minf(bounds[1], p[1]);
-	bounds[2] = maxf(bounds[2], p[0]);
-	bounds[3] = maxf(bounds[3], p[1]);
-	pointsCount++;
+        float* p = &path->pts[i*2];
+        bounds[0] = minf(bounds[0], p[0]);
+        bounds[1] = minf(bounds[1], p[1]);
+        bounds[2] = maxf(bounds[2], p[0]);
+        bounds[3] = maxf(bounds[3], p[1]);
+        pointsCount++;
       }
       pathCount++;
     }
@@ -425,8 +425,8 @@ int main(int argc, char* argv[]) {
   char xy = 1;
   float w,widthInmm = -1.;
   int numReord = 30;
-  float scale = 1.;
-  float tol = 0.5;
+  float scale = 0.02;
+  float tol = 0.2;
   float size = 100;
   float accuracy = 0.1;
   float x,y,bx,by,bxold,byold,d,firstx,firsty;
